@@ -12,6 +12,7 @@ import { AppContext } from "../App";
 export default function BuyProduct() {
   const { products, setProducts } = useContext(AppContext);
   const { id } = useParams();
+  const navTo = useNavigate();
 
   const currentProduct = products.filter((ele) => ele._id == id);
   const productName = currentProduct[0].product;
@@ -82,7 +83,8 @@ export default function BuyProduct() {
               const data = await response.json();
               
               if (data.message === "Added new product") {
-                return toast.success("Added new product");
+                 toast.success("Added new product");
+                 return setTimeout(()=>{navTo('/')},2000)
               }
             } catch (error) {
               notifyWarning("Retry after sometimes...");

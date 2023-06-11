@@ -6,7 +6,7 @@ import ProductsPage from './ProductsPage';
 const BasePage = () => {
   return (
     <>
-    <header className='w-100 bg-dark p-2'>
+    <header className=' bg-dark p-2'>
       <div className='d-flex pt-2 align-items-center justify-content-between mx-3'>
       <h1 className='text-white '>RenTen</h1>
       <NavLink className='text-white' to='/login'>Admin Login</NavLink>
