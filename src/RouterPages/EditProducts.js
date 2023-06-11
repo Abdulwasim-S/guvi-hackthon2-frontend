@@ -45,7 +45,7 @@ const EditProducts = () => {
     }
   }
   return (
-    <div className='row w-100 bg-success justify-content-around'>
+    <div className='row bg-success justify-content-around'>
       <div className='col-md-3'></div>
       <div className='col-md-6'>
       <input className='form-control mt-3 mx-2' type='text' style={{marginLeft:"50%"}} onChange={(e) => searchFilter(e.target.value)} placeholder='search product....' />
