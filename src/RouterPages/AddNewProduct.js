@@ -99,7 +99,7 @@ export default function AddNewProduct() {
               className={`form-control shadow ${
                 touched.price && errors.price ? " border-danger " : ""
               }`}
-              placeholder="Enter price per hour"
+              placeholder="Enter price per day"
               type="price"
               value={values.price}
               onChange={handleChange}
@@ -108,7 +108,7 @@ export default function AddNewProduct() {
             <label for="price" className="text-muted">
               {touched.price && errors.price
                 ? errors.price
-                : "Enter price per hour"}
+                : "Enter price per day"}
             </label>
           </div>
           <div className="form-floating mb-3 ">
