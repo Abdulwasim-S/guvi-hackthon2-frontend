@@ -26,7 +26,7 @@ const EditProducts = () => {
     const notify=await toast.success("deleted...");
     const newProductList=products.filter((ele)=>ele._id!==id);
     setProducts(newProductList);
-    setTimeout(()=>{navTo('/productslist')},2000)}
+    setTimeout(()=>{navTo('/')},2000)}
     catch(error){
     }
   }
