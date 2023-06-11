@@ -1,10 +1,9 @@
-import { Route, Routes, useNavigate } from 'react-router';
+import { Route, Routes } from 'react-router';
 import './App.css';
 import LogInPage from './RouterPages/LogInPage';
 import BasePage from './RouterPages/BasePage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AddNewProduct from './RouterPages/AddNewProduct';
-import ProductsPage from './RouterPages/ProductsPage';
 import { createContext, useEffect, useState } from 'react';
 import EditProducts from './RouterPages/EditProducts';
 import EditProduct from './RouterPages/EditProduct';
@@ -16,7 +15,6 @@ export const AppContext=createContext(null);
 
 function App() {
   const [products,setProducts]=useState([]);
-  const navTo=useNavigate();
   
   useEffect(()=>{
     try{async function productsList(){
@@ -55,9 +53,7 @@ function App() {
     <div className="App">
       <AppContext.Provider value={{products,setProducts,rentalProducts,setRentalPoducts}}>
       <Routes exact path='/'>
-        <Route path='/' element={<BasePage/>}>
-          {products.length>0&&<Route path='productslist' element={<ProductsPage/>}/>}
-        </Route>
+        {products.length> 0&& <Route path='/' element={<BasePage/>}/>}
         <Route path='/login'element={<LogInPage/>}/>
         <Route path='/adminPage' element={<AdminPage/>}>
           <Route path='editproductlist' element={<EditProducts/>}/>

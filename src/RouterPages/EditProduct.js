@@ -54,7 +54,7 @@ export default function EditProduct(){
           const data = await response.json();
           notifySuccess(data.message)
           setTimeout(function(){
-            navTo('/productslist');
+            navTo('/');
           },2000)
         }
         catch(error){

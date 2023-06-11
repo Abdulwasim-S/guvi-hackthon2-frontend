@@ -60,7 +60,7 @@ export default function AddNewProduct() {
           notifySuccess(data.message);
           setState(!state);
           setTimeout(function(){
-            navTo('/productslist');
+            navTo('/');
           },2000)
         } catch (error) {
           notifyWarning("Unable to add...");
