@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import * as yup from "yup";
 import "../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function LogInPage(){
+  const navTo=useNavigate()
     const [state,setState]=useState("")
     const fieldvalidationscheme=yup.object({
         email:yup.string().required("Please enter email"),
@@ -19,6 +21,7 @@ export default function LogInPage(){
         },
         validationSchema:fieldvalidationscheme,
         onSubmit:async (loginInfo)=>{
+          try{toast.info("Please wait....")
           const response = await fetch(
             "https://guvi-hackthon2-abdulwasims-backend.vercel.app/login",
             {
@@ -33,14 +36,18 @@ export default function LogInPage(){
           if(data.token) {
             localStorage.setItem("token", data.token);
             setState("");
+            toast.success(data.message)
+            setTimeout(()=>{navTo('/adminPage');},2000)
             }
         else {
              setState(data.message)
-            }
+            }}
+            catch(error){}
         }
       })
       return (
         <div className='m-3'>
+          <ToastContainer/>
           <h1 className='page-title mt-5 mb-3 '>ADMIN LOGIN</h1>
           <form 
             className='mb-5'
@@ -77,8 +84,12 @@ export default function LogInPage(){
                 LogIn
               </button>
           </form>
-          <NavLink className='text-dark text-decoration-none' to='/'>&lt;---return to home page</NavLink>
+          <br/>
           <span>{state}</span>
+          <br/>
+          <p>To find email and password --- use read me file attached with this in github.</p>
+          <NavLink className='text-dark text-decoration-none' to='/'>&lt;---return to home page</NavLink>
+          
         </div>
       );
 }
