@@ -56,7 +56,7 @@ const EditProducts = () => {
          <Card.Img className='card-image' variant="top" src={data.image} />
          <Card.Body>
            <Card.Title>{data.product}</Card.Title>
-           <Card.Text>&#8377; {data.price}/hr</Card.Text>
+           <Card.Text>&#8377; {data.price}/day</Card.Text>
            <Card.Text>Available stocks : {data.quantity}</Card.Text>
            <Button variant="info px-5 m-2 pb-3" onClick={()=>editing(data._id)}><EditFilled/></Button>
            <Button variant="warning px-5 m-2 pb-3" onClick={()=>deleting(data._id)}><DeleteFilled/></Button>
