@@ -5,7 +5,7 @@ const AdminPage = () => {
   return (
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-success px-3">
-        <Link class="navbar-brand text-light px-3" to="/home">
+        <Link class="navbar-brand text-light px-3">
           <h3>Admin page</h3>
         </Link>
         <button
