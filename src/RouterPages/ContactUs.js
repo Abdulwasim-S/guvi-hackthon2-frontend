@@ -10,7 +10,7 @@ const ContactUs = () => {
             <p className='text-light'>Renten is the product rental site. Our site is the one of the leading rental product selling page and we offer products at low cost with more added benifits.</p>
             <h3>Contact Us</h3>
             <p className='text-light'>If you are facing any issue or you need to know more about our website you can reach out through </p>
-            <p className='text-primary'><WhatsAppOutlined/> <a href='https://api.whatsapp.com/send/?phone=%2B918778354776&text&type=phone_number&app_absent=0'>Contact Us</a></p>
+            <p className='text-primary'><WhatsAppOutlined/><a href="https://api.whatsapp.com/send/?phone=%2B918778354776&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Contact Us</a></p>
             <p><MailFilled /> abdulwasimsmech@gmail.com</p>
         </div>
         <a className='text-white' href='/'>Return to home page</a>
