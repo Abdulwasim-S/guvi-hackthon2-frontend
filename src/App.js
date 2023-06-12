@@ -10,12 +10,13 @@ import EditProduct from './RouterPages/EditProduct';
 import BuyProduct from './RouterPages/BuyProduct';
 import RentalProductsList from './RouterPages/RentalProductsList';
 import AdminPage from './RouterPages/AdminPage';
+import ContactUs from './RouterPages/ContactUs';
 
 export const AppContext=createContext(null);
 
 function App() {
   const [products,setProducts]=useState([]);
-  
+
   useEffect(()=>{
     try{async function productsList(){
       const response = await fetch("https://guvi-hackthon2-abdulwasims-backend.vercel.app/products", {method:"GET"})
@@ -62,6 +63,7 @@ function App() {
         </Route>
         {products.length > 0 && <Route path='buyproduct/:id' element={<BuyProduct/>}/>}
         <Route path='editproduct/:id' element={<EditProduct/>}/>
+        <Route path='contactus' element={<ContactUs/>}/>
       </Routes>
       </AppContext.Provider>
      

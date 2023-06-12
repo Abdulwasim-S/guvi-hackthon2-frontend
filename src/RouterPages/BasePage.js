@@ -14,6 +14,7 @@ const BasePage = () => {
     </header>
     <div className='container-fluid bg-secondary'>
     <h3 className='text-white pt-5 pb-4'>Take products for rent at affordable price</h3>
+    <a className='text-white' href='/contactus'>click here to ContactUs</a>
     <Outlet />
     </div>
     <ProductsPage/>
