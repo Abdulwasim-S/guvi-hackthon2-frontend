@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const AdminPage = () => {
   return (
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-success px-3">
+      <nav class="navbar navbar-expand-lg navbar-light bg-success px-3">
         <Link class="navbar-brand text-light px-3">
           <h3>Admin page</h3>
         </Link>
@@ -17,7 +17,7 @@ const AdminPage = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i class="fa-solid fa-bars fa-xl text-light"/>
+          <i class="fa-solid fa-bars fa-xl text-light" />
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,17 +38,20 @@ const AdminPage = () => {
               </Link>
             </li>
             <li class="nav-item">
-              <Link className="btn text-light w-100 px-5" to="rentalproductslist">
+              <Link
+                className="btn text-light w-100 px-5"
+                to="rentalproductslist"
+              >
                 Rented Product Page
               </Link>
             </li>
           </ul>
         </div>
       </nav>
-      <Outlet/>
+      <h1 className="text-success">Welcome to Rental Admin Page</h1>
+      <Outlet />
     </div>
-    
-  )
-}
+  );
+};
 
-export default AdminPage
+export default AdminPage;
